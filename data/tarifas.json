@@ -1,0 +1,37 @@
+{
+  "intro": "Precio final al mes. Las mismas tarifas para CrossFit y HYROX. Todas incluyen clases guiadas por entrenadores.",
+  "planes": [
+    {
+      "nombre": "Basic",
+      "detalle": "3 días a la semana",
+      "precio": 50,
+      "destacado": false
+    },
+    {
+      "nombre": "Media",
+      "detalle": "4 días a la semana",
+      "precio": 55,
+      "destacado": false
+    },
+    {
+      "nombre": "Move",
+      "detalle": "5 días a la semana",
+      "precio": 60,
+      "destacado": true
+    },
+    {
+      "nombre": "Freaks",
+      "detalle": "6 días a la semana",
+      "precio": 65,
+      "destacado": false
+    },
+    {
+      "nombre": "Crazy",
+      "detalle": "Ilimitado",
+      "precio": 70,
+      "destacado": false
+    }
+  ],
+  "bonos": "Si vienes de paso o quieres entrenar de forma puntual, pregúntanos por las opciones disponibles.",
+  "servicios": "Cuéntanos qué necesitas y te informamos sobre el servicio y sus tarifas."
+}

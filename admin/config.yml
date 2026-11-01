@@ -1,0 +1,87 @@
+# Panel de contenidos de Move BC (Decap CMS)
+# Acceso: https://TU-DOMINIO/admin  (se entra con la cuenta de GitHub que tenga acceso al repositorio)
+backend:
+  name: github
+  repo: CAMBIAR-USUARIO/move-bc-web   # <-- usuario/repositorio de GitHub
+  branch: main
+
+locale: es
+site_url: https://fantastic-mermaid-c36d9c.netlify.app
+display_url: https://fantastic-mermaid-c36d9c.netlify.app
+logo_url: /img/logo-negro.png
+
+# Las fotos que se suban desde el panel se guardan aquí
+media_folder: img/subidas
+public_folder: img/subidas
+
+collections:
+  - name: contenido
+    label: Contenido de la web
+    editor: { preview: false }
+    files:
+
+      # ---------------- HORARIOS ----------------
+      - name: horarios
+        label: Horarios
+        file: data/horarios.json
+        fields:
+          - { name: nota, label: "Nota bajo el horario", widget: text, required: false }
+          - name: dias
+            label: Días
+            label_singular: día
+            widget: list
+            summary: "{{fields.dia}}"
+            fields:
+              - { name: dia, label: Día, widget: string }
+              - name: clases
+                label: Clases
+                label_singular: clase
+                widget: list
+                summary: "{{fields.hora}} · {{fields.tipo}}"
+                fields:
+                  - { name: hora, label: "Hora (ej. 7:30 - 8:30)", widget: string }
+                  - { name: tipo, label: Actividad, widget: select, options: ["CrossFit", "HYROX", "CrossFit y HYROX"], default: "CrossFit" }
+
+      # ---------------- TARIFAS ----------------
+      - name: tarifas
+        label: Tarifas
+        file: data/tarifas.json
+        fields:
+          - { name: intro, label: "Texto sobre las tarifas", widget: text }
+          - name: planes
+            label: Tarifas mensuales
+            label_singular: tarifa
+            widget: list
+            summary: "{{fields.nombre}} · {{fields.precio}} €"
+            fields:
+              - { name: nombre, label: Nombre, widget: string }
+              - { name: detalle, label: "Qué incluye (ej. 3 días a la semana)", widget: string }
+              - { name: precio, label: "Precio al mes (€)", widget: number, value_type: int }
+              - { name: destacado, label: "Destacar en negro", widget: boolean, default: false, required: false }
+          - { name: bonos, label: "Bonos y visitas puntuales", widget: text, required: false }
+          - { name: servicios, label: "Move Performance y nutrición", widget: text, required: false }
+
+      # ---------------- ACTIVIDADES ----------------
+      - name: actividades
+        label: "Eventos, talleres y formación"
+        file: data/actividades.json
+        fields:
+          - name: actividades
+            label: Actividades
+            label_singular: actividad
+            hint: "Las actividades con fecha de hoy o futura salen en «Próximos eventos». Cuando pasa la fecha, pasan solas al archivo («Lo que hemos compartido» o «Formación»). No hace falta borrarlas."
+            widget: list
+            summary: "{{fields.fecha}} · {{fields.titulo}}"
+            fields:
+              - { name: titulo, label: Título, widget: string }
+              - { name: tipo, label: Tipo, widget: select, options: ["Evento", "Taller", "Community Day", "Formación"], default: "Evento" }
+              - { name: fecha, label: Fecha, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
+              - { name: fecha_texto, label: "Fecha a mostrar en el archivo (opcional, ej. «Abril de 2026»)", widget: string, required: false }
+              - { name: hora, label: "Hora (opcional, ej. 10:30)", widget: string, required: false }
+              - { name: descripcion, label: Descripción, widget: text, required: false }
+              - { name: para, label: "A quién va dirigida", widget: string, required: false }
+              - { name: precio, label: "Precio (ej. 40 € o Gratis)", widget: string, required: false }
+              - { name: plazas, label: "Plazas / duración (opcional)", widget: string, required: false }
+              - { name: imagen, label: Foto, widget: image, required: false }
+              - { name: enlace, label: "Enlace (inscripción, WhatsApp o Instagram)", widget: string, required: false }
+              - { name: enlace_texto, label: "Texto del botón (ej. Reserva tu plaza)", widget: string, required: false }

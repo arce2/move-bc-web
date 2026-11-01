@@ -1,0 +1,283 @@
+{
+  "nota": "Clases de 1 hora. La reserva de una primera clase se confirmará según la disponibilidad.",
+  "dias": [
+    {
+      "dia": "Lunes",
+      "clases": [
+        {
+          "hora": "7:30 - 8:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "8:50 - 9:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "10:00 - 11:00",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "11:10 - 12:10",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "13:30 - 14:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "14:35 - 15:35",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "15:40 - 16:40",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "16:45 - 17:45",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "17:50 - 18:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "18:55 - 19:55",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "20:00 - 21:00",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "21:05 - 22:05",
+          "tipo": "CrossFit"
+        }
+      ]
+    },
+    {
+      "dia": "Martes",
+      "clases": [
+        {
+          "hora": "7:30 - 8:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "8:50 - 9:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "10:00 - 11:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "11:10 - 12:10",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "13:30 - 14:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "14:35 - 15:35",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "15:40 - 16:40",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "16:45 - 17:45",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "17:50 - 18:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "18:55 - 19:55",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "20:00 - 21:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "21:05 - 22:05",
+          "tipo": "CrossFit"
+        }
+      ]
+    },
+    {
+      "dia": "Miércoles",
+      "clases": [
+        {
+          "hora": "7:30 - 8:30",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "8:50 - 9:50",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "10:00 - 11:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "11:10 - 12:10",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "13:30 - 14:30",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "14:35 - 15:35",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "15:40 - 16:40",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "16:45 - 17:45",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "17:50 - 18:50",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "18:55 - 19:55",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "20:00 - 21:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "21:05 - 22:05",
+          "tipo": "CrossFit y HYROX"
+        }
+      ]
+    },
+    {
+      "dia": "Jueves",
+      "clases": [
+        {
+          "hora": "7:30 - 8:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "8:50 - 9:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "10:00 - 11:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "11:10 - 12:10",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "13:30 - 14:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "14:35 - 15:35",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "15:40 - 16:40",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "16:45 - 17:45",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "17:50 - 18:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "18:55 - 19:55",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "20:00 - 21:00",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "21:05 - 22:05",
+          "tipo": "CrossFit"
+        }
+      ]
+    },
+    {
+      "dia": "Viernes",
+      "clases": [
+        {
+          "hora": "7:30 - 8:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "8:50 - 9:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "10:00 - 11:00",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "11:10 - 12:10",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "13:30 - 14:30",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "14:35 - 15:35",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "15:40 - 16:40",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "16:45 - 17:45",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "17:50 - 18:50",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "18:55 - 19:55",
+          "tipo": "CrossFit"
+        },
+        {
+          "hora": "20:00 - 21:00",
+          "tipo": "CrossFit"
+        }
+      ]
+    },
+    {
+      "dia": "Sábado",
+      "clases": [
+        {
+          "hora": "9:30 - 10:30",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "10:45 - 11:45",
+          "tipo": "CrossFit y HYROX"
+        },
+        {
+          "hora": "12:00 - 13:00",
+          "tipo": "CrossFit y HYROX"
+        }
+      ]
+    }
+  ]
+}
