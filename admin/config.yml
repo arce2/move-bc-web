@@ -2,7 +2,7 @@
 # Acceso: https://TU-DOMINIO/admin  (se entra con la cuenta de GitHub que tenga acceso al repositorio)
 backend:
   name: github
-  repo: CAMBIAR-USUARIO/move-bc-web   # <-- usuario/repositorio de GitHub
+  repo: arce2/move-bc-web
   branch: main
 
 locale: es
