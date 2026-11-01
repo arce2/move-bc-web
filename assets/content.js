@@ -16,6 +16,7 @@
   var aFecha = function (s) { var p = String(s || '').slice(0, 10).split('-'); return new Date(+p[0], (+p[1] || 1) - 1, +p[2] || 1); };
   var fmtLargo = function (d) { return new Intl.DateTimeFormat('es-ES', { weekday: 'long', day: 'numeric', month: 'long' }).format(d); };
   var fmtCorto = function (d) { return new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(d); };
+  var pos = function (e) { return { 'Arriba': 'center 12%', 'Centro': 'center 55%', 'Abajo': 'center 88%' }[e] || 'center top'; };
   var cap = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
   var waBtn = function (a) {
     if (!a.enlace) return '';
@@ -76,7 +77,7 @@
           (a.plazas ? '<dt>Plazas</dt><dd>' + esc(a.plazas) + '</dd>' : '') +
           (a.precio ? '<dt>Precio</dt><dd>' + esc(a.precio) + '</dd>' : '');
         return '<article class="event">' +
-          (a.imagen ? '<div class="pic"><img src="' + esc(a.imagen) + '" alt="' + esc(a.titulo) + '" loading="lazy" decoding="async"></div>' : '') +
+          (a.imagen ? '<div class="pic"><img src="' + esc(a.imagen) + '" alt="' + esc(a.titulo) + '" loading="lazy" decoding="async" style="object-position:' + pos(a.encuadre) + '"></div>' : '') +
           '<div class="txt"><span class="eyebrow" style="margin-bottom:.5rem">' + esc(a.tipo || 'Evento') + '</span><h3>' + esc(a.titulo) + '</h3>' +
           (a.descripcion ? '<p class="prose" style="margin-top:.6rem">' + esc(a.descripcion) + '</p>' : '') +
           '<dl>' + dl + '</dl>' + waBtn(a) + '</div></article>';
