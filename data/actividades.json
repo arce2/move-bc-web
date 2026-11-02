@@ -172,6 +172,21 @@
       "enlace_texto": ""
     },
     {
+      "titulo": "The Gymnastic Course",
+      "tipo": "Formación",
+      "fecha": "2025-01-01",
+      "fecha_texto": "Gimnasia",
+      "hora": "",
+      "descripcion": "Curso de especialización en gimnasia.",
+      "para": "",
+      "precio": "",
+      "plazas": "",
+      "imagen": "img/form-gymnastic-course.webp",
+      "encuadre": "Centro",
+      "enlace": "",
+      "enlace_texto": ""
+    },
+    {
       "titulo": "CrossFit Level 2",
       "tipo": "Formación",
       "fecha": "2025-01-01",
@@ -259,21 +274,6 @@
       "imagen": "img/ig-formaciones.webp",
       "enlace": "https://www.instagram.com/movebc.crossfit/p/DXo8f0cDPve/",
       "enlace_texto": "Ver en Instagram"
-    },
-    {
-      "titulo": "The Gymnastic Course",
-      "tipo": "Formación",
-      "fecha": "2025-01-01",
-      "fecha_texto": "Gimnasia",
-      "hora": "",
-      "descripcion": "Curso de especialización en gimnasia.",
-      "para": "",
-      "precio": "",
-      "plazas": "",
-      "imagen": "",
-      "encuadre": "Centro",
-      "enlace": "",
-      "enlace_texto": ""
     }
   ]
 }
