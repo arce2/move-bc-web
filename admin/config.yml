@@ -6,8 +6,8 @@ backend:
   branch: main
 
 locale: es
-site_url: https://fantastic-mermaid-c36d9c.netlify.app
-display_url: https://fantastic-mermaid-c36d9c.netlify.app
+site_url: https://movebarbellclub.es
+display_url: https://movebarbellclub.es
 logo_url: /img/logo-negro.png
 
 # Las fotos que se suban desde el panel se guardan aquí

@@ -39,14 +39,16 @@
     var tabla = '<table class="week"><thead><tr><th scope="col">Hora</th>' + dias.map(function (d) { return '<th scope="col">' + esc(d.dia) + '</th>'; }).join('') + '</tr></thead><tbody>' +
       filas.map(function (hr) {
         return '<tr><th scope="row">' + esc(hr) + '</th>' + dias.map(function (d) {
-          var c = (d.clases || []).filter(function (x) { return x.hora === hr; })[0];
-          return '<td>' + (c ? '<span class="tag ' + tipo(c.tipo) + '">' + nombre[tipo(c.tipo)] + '</span>' : '<span class="none">—</span>') + '</td>';
+          var cs = (d.clases || []).filter(function (x) { return x.hora === hr; });
+          return '<td>' + (cs.length ? cs.map(function (c) { return '<span class="tag ' + tipo(c.tipo) + '">' + nombre[tipo(c.tipo)] + '</span>'; }).join('') : '<span class="none">—</span>') + '</td>';
         }).join('') + '</tr>';
       }).join('') + '</tbody></table>';
     // lista por día (móvil)
     var listas = dias.map(function (d, i) {
       return '<ul class="daylist" data-dia="' + i + '">' + (d.clases || []).map(function (c) {
-        return '<li><b>' + esc(c.hora) + '</b><span class="tag ' + tipo(c.tipo) + '">' + nombre[tipo(c.tipo)] + '</span></li>';
+        return c;
+      }).reduce(function (acc, c) { var last = acc[acc.length - 1]; if (last && last.hora === c.hora) last.tipos.push(c.tipo); else acc.push({ hora: c.hora, tipos: [c.tipo] }); return acc; }, []).map(function (g) {
+        return '<li><b>' + esc(g.hora) + '</b><span class="tags">' + g.tipos.map(function (t) { return '<span class="tag ' + tipo(t) + '">' + nombre[tipo(t)] + '</span>'; }).join('') + '</span></li>';
       }).join('') + '</ul>';
     }).join('');
     tSched.innerHTML = '<div class="week-wrap">' + tabla + '</div>' + listas;
