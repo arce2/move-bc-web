@@ -373,3 +373,34 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .l3 p+p{margin-top:.7rem}
 .form-title{margin-top:clamp(48px,6vw,72px);font-size:clamp(1.6rem,2.6vw,2.1rem)}
 @media (max-width:600px){.l3{grid-template-columns:1fr}.l3 img{width:96px}}
+
+/* horario más claro */
+.sched-intro{display:grid;gap:10px;margin:1.6rem 0 1.4rem;max-width:720px}
+.legend2{display:flex;align-items:center;gap:12px;color:var(--ink-2);font-size:.97rem}
+.legend2 .tag{flex:none;min-width:150px;text-align:center}
+.tag{display:inline-block;font-family:var(--display);font-weight:700;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;padding:.3em .7em;border-radius:6px;white-space:nowrap;line-height:1.2}
+.tag.cf{background:var(--ink);color:var(--chalk)}
+.tag.both{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.tag.hx{background:#e8e9e8;color:var(--ink)}
+.week-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--bg)}
+.week{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.week th,.week td{padding:.55rem .6rem;border-bottom:1px solid var(--line);text-align:center}
+.week thead th{font-family:var(--display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:1rem;background:var(--bg-soft)}
+.week tbody th{font-weight:600;white-space:nowrap;text-align:left;padding-left:1rem}
+.week tbody tr:last-child>*{border-bottom:0}
+.week .tag{font-size:.8rem;padding:.3em .55em}
+.week .none{color:#c4c7c6}
+.days{display:none}
+.daylist{display:none;list-style:none}
+@media (max-width:760px){
+ .week-wrap{display:none}
+ .days{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-bottom:12px}
+ .days button{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:.06em;text-transform:uppercase;padding:.7em 0;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+ .days button[aria-selected="true"]{background:var(--ink);color:var(--chalk);border-color:var(--ink)}
+ .days .full{display:none}
+ .daylist.on{display:grid;gap:8px}
+ .daylist li{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:.75rem 1rem}
+ .daylist b{font-variant-numeric:tabular-nums;font-size:1.05rem}
+ .legend2{align-items:flex-start;flex-direction:column;gap:4px}
+ .legend2 .tag{min-width:0}
+}

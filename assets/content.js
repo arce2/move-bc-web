@@ -27,15 +27,40 @@
   /* ---------- horarios ---------- */
   var tSched = $('[data-horarios]');
   if (tSched) get('data/horarios.json').then(function (h) {
-    var clase = { 'CrossFit': 'cf', 'HYROX': 'hx', 'CrossFit y HYROX': 'both' };
-    tSched.innerHTML = (h.dias || []).map(function (d) {
-      var slots = (d.clases || []).map(function (c) {
-        var k = clase[c.tipo] || 'cf';
-        var label = k === 'both' ? ' <small>CF / HYROX</small>' : (k === 'hx' ? ' <small>HYROX</small>' : '');
-        return '<span class="slot ' + k + '">' + esc(c.hora) + label + '</span>';
-      }).join('');
-      return '<tr><th scope="row">' + esc(d.dia) + '</th><td>' + (slots || '<span class="muted">Sin clases</span>') + '</td></tr>';
+    var dias = h.dias || [];
+    var tipo = function (t) { return t === 'CrossFit y HYROX' ? 'both' : (t === 'HYROX' ? 'hx' : 'cf'); };
+    var nombre = { cf: 'CrossFit', both: 'CrossFit / HYROX', hx: 'HYROX' };
+    var ini = function (hora) { var m = String(hora).match(/(\d{1,2})[:.](\d{2})/); return m ? (+m[1]) * 60 + (+m[2]) : 9999; };
+    var corta = function (d) { return String(d).slice(0, 3); };
+    // tabla semanal (ordenador)
+    var horas = {};
+    dias.forEach(function (d) { (d.clases || []).forEach(function (c) { horas[c.hora] = ini(c.hora); }); });
+    var filas = Object.keys(horas).sort(function (a, b) { return horas[a] - horas[b]; });
+    var tabla = '<table class="week"><thead><tr><th scope="col">Hora</th>' + dias.map(function (d) { return '<th scope="col">' + esc(d.dia) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      filas.map(function (hr) {
+        return '<tr><th scope="row">' + esc(hr) + '</th>' + dias.map(function (d) {
+          var c = (d.clases || []).filter(function (x) { return x.hora === hr; })[0];
+          return '<td>' + (c ? '<span class="tag ' + tipo(c.tipo) + '">' + nombre[tipo(c.tipo)] + '</span>' : '<span class="none">—</span>') + '</td>';
+        }).join('') + '</tr>';
+      }).join('') + '</tbody></table>';
+    // lista por día (móvil)
+    var listas = dias.map(function (d, i) {
+      return '<ul class="daylist" data-dia="' + i + '">' + (d.clases || []).map(function (c) {
+        return '<li><b>' + esc(c.hora) + '</b><span class="tag ' + tipo(c.tipo) + '">' + nombre[tipo(c.tipo)] + '</span></li>';
+      }).join('') + '</ul>';
     }).join('');
+    tSched.innerHTML = '<div class="week-wrap">' + tabla + '</div>' + listas;
+    var bar = $('[data-dias]');
+    var hoyIdx = (new Date().getDay() + 6) % 7; if (hoyIdx >= dias.length) hoyIdx = 0;
+    var elegir = function (i) {
+      [].forEach.call(tSched.querySelectorAll('.daylist'), function (u) { u.classList.toggle('on', +u.getAttribute('data-dia') === i); });
+      if (bar) [].forEach.call(bar.children, function (b, k) { b.setAttribute('aria-selected', k === i ? 'true' : 'false'); });
+    };
+    if (bar) {
+      bar.innerHTML = dias.map(function (d, i) { return '<button type="button" role="tab" data-i="' + i + '"><span class="full">' + esc(d.dia) + '</span><span class="short">' + esc(corta(d.dia)) + '</span></button>'; }).join('');
+      bar.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) elegir(+b.getAttribute('data-i')); });
+    }
+    elegir(hoyIdx);
     var n = $('[data-horarios-nota]'); if (n && h.nota) n.textContent = h.nota;
   }).catch(function () {});
 
