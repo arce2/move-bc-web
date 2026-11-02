@@ -359,3 +359,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .event .pic img{position:absolute;inset:0}
 @media (max-width:900px){.event .pic{min-height:0;aspect-ratio:4/3}}
 .event .pic img{object-position:center top}
+
+/* equipo: formación */
+.coach .cert{margin:.3rem .35rem .3rem 0}
+.coach .cert+p{margin-top:.6rem}
+.summit-ref{margin-top:.8rem;font-size:.95rem;color:var(--ink-2)}
+.summit-ref .link{font-size:.9rem;margin-left:.2rem}
+.l3{background:var(--ink);color:var(--chalk);border-radius:var(--r);padding:clamp(1.4rem,3vw,2.2rem);display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;align-items:start}
+.l3 img{width:120px;height:auto;border-radius:10px}
+.l3 .eyebrow{color:#9a9ea0;margin-bottom:.5rem}
+.l3 h3{font-size:clamp(1.5rem,2.4vw,1.9rem);margin-bottom:.7rem}
+.l3 p{color:#c9cccd;font-size:.97rem}
+.l3 p+p{margin-top:.7rem}
+.form-title{margin-top:clamp(48px,6vw,72px);font-size:clamp(1.6rem,2.6vw,2.1rem)}
+@media (max-width:600px){.l3{grid-template-columns:1fr}.l3 img{width:96px}}

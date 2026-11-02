@@ -69,14 +69,14 @@ collections:
           - name: actividades
             label: Actividades
             label_singular: actividad
-            hint: "Las actividades con fecha de hoy o futura salen en «Próximos eventos». Cuando pasa la fecha, pasan solas al archivo («Lo que hemos compartido» o «Formación»). No hace falta borrarlas."
+            hint: "Eventos, talleres y Community Days con fecha de hoy o futura salen en «Próximos eventos»; cuando pasa la fecha, pasan solos a «Lo que hemos compartido». Las de tipo Formación salen en la página Equipo, en el orden de esta lista (arrastra para reordenar)."
             widget: list
             summary: "{{fields.fecha}} · {{fields.titulo}}"
             fields:
               - { name: titulo, label: Título, widget: string }
               - { name: tipo, label: Tipo, widget: select, options: ["Evento", "Taller", "Community Day", "Formación"], default: "Evento" }
               - { name: fecha, label: Fecha, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
-              - { name: fecha_texto, label: "Fecha a mostrar en el archivo (opcional, ej. «Abril de 2026»)", widget: string, required: false }
+              - { name: fecha_texto, label: "Texto pequeño sobre el título (opcional). En eventos: fecha a mostrar, ej. «Abril de 2026». En Formación: el tema, ej. «Halterofilia»", widget: string, required: false }
               - { name: hora, label: "Hora (opcional, ej. 10:30)", widget: string, required: false }
               - { name: descripcion, label: Descripción, widget: text, required: false }
               - { name: para, label: "A quién va dirigida", widget: string, required: false }

@@ -31,7 +31,7 @@
     tSched.innerHTML = (h.dias || []).map(function (d) {
       var slots = (d.clases || []).map(function (c) {
         var k = clase[c.tipo] || 'cf';
-        var label = k === 'both' ? ' <small>+ HYROX</small>' : (k === 'hx' ? ' <small>HYROX</small>' : '');
+        var label = k === 'both' ? ' <small>CF / HYROX</small>' : (k === 'hx' ? ' <small>HYROX</small>' : '');
         return '<span class="slot ' + k + '">' + esc(c.hora) + label + '</span>';
       }).join('');
       return '<tr><th scope="row">' + esc(d.dia) + '</th><td>' + (slots || '<span class="muted">Sin clases</span>') + '</td></tr>';
@@ -53,7 +53,7 @@
   var needAct = $('[data-proximas]') || $('[data-archivo]') || $('[data-formacion]') || $('[data-aviso-evento]');
   if (needAct) get('data/actividades.json').then(function (data) {
     var list = (data.actividades || []).map(function (a) { a._d = aFecha(a.fecha); return a; });
-    var prox = list.filter(function (a) { return a._d >= hoy; }).sort(function (a, b) { return a._d - b._d; });
+    var prox = list.filter(function (a) { return a._d >= hoy && a.tipo !== 'Formación'; }).sort(function (a, b) { return a._d - b._d; });
     var past = list.filter(function (a) { return a._d < hoy; }).sort(function (a, b) { return b._d - a._d; });
 
     // aviso en portada
@@ -71,7 +71,7 @@
     if (pBox) {
       if (!prox.length) { var em = $('[data-if-empty]'); if (em) em.hidden = false; pBox.remove(); }
       else pBox.innerHTML = prox.map(function (a) {
-        var cuando = cap(fmtLargo(a._d)) + (a.hora ? ' · ' + esc(a.hora) + ' h' : '');
+        var cuando = cap(fmtLargo(a._d)) + (a.hora ? ' · ' + esc(a.hora) + (/^\d/.test(a.hora) ? ' h' : '') : '');
         var dl = '<dt>Fecha</dt><dd>' + cuando + '</dd>' +
           (a.para ? '<dt>Para</dt><dd>' + esc(a.para) + '</dd>' : '') +
           (a.plazas ? '<dt>Plazas</dt><dd>' + esc(a.plazas) + '</dd>' : '') +
@@ -102,7 +102,7 @@
         if (more) { more.hidden = false; more.addEventListener('click', function () { [].forEach.call(box.children, function (el) { el.hidden = false; }); more.remove(); }); }
       } else if (more) more.remove();
     };
-    pintar($('[data-formacion]'), past.filter(function (a) { return a.tipo === 'Formación'; }), 3);
+    pintar($('[data-formacion]'), list.filter(function (a) { return a.tipo === 'Formación'; }), 9);
     pintar($('[data-archivo]'), past.filter(function (a) { return a.tipo !== 'Formación'; }), 6);
   }).catch(function () { var a = $('[data-aviso-evento]'); if (a) a.remove(); });
 })();
