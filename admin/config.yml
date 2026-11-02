@@ -84,5 +84,5 @@ collections:
               - { name: plazas, label: "Plazas / duración (opcional)", widget: string, required: false }
               - { name: imagen, label: Foto, widget: image, required: false }
               - { name: encuadre, label: "Encuadre de la foto en Próximos eventos", widget: select, options: ["Arriba", "Centro", "Abajo"], default: "Arriba", required: false }
-              - { name: enlace, label: "Enlace (inscripción, WhatsApp o Instagram)", widget: string, required: false }
+              - { name: enlace, label: "Enlace (el del evento en Aimharder, o Instagram). Si lo dejas vacío, el botón lleva a las reservas de Aimharder", widget: string, required: false }
               - { name: enlace_texto, label: "Texto del botón (ej. Reserva tu plaza)", widget: string, required: false }

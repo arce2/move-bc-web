@@ -11,8 +11,8 @@
       "precio": "Gratis",
       "plazas": "",
       "imagen": "img/hyrox-remo-2.webp",
-      "enlace": "https://wa.me/34618436804?text=Hola%2C%20quer%C3%ADa%20apuntarme%20a%20la%20carrera%20por%20parejas%20del%207%20de%20noviembre.",
-      "enlace_texto": "Apúntate por WhatsApp"
+      "enlace": "https://movebarbellclub.aimharder.com/schedule",
+      "enlace_texto": "Reserva tu plaza"
     },
     {
       "titulo": "CFHK Workshops: Tradición que se entrena",
@@ -25,7 +25,7 @@
       "precio": "40 €",
       "plazas": "20 plazas · 2 horas",
       "imagen": "img/cfhk-workshop.webp",
-      "enlace": "https://wa.me/34618436804?text=Hola%2C%20quer%C3%ADa%20reservar%20plaza%20en%20el%20CFHK%20Workshop%20del%2014%20de%20noviembre.",
+      "enlace": "https://movebarbellclub.aimharder.com/schedule",
       "enlace_texto": "Reserva tu plaza"
     },
     {
@@ -39,8 +39,8 @@
       "precio": "",
       "plazas": "",
       "imagen": "img/comida-navidad-arbol-2.webp",
-      "enlace": "https://wa.me/34618436804?text=Hola%2C%20quer%C3%ADa%20apuntarme%20a%20la%20comida%20de%20Navidad%20del%2028%20de%20noviembre.",
-      "enlace_texto": "Apúntate por WhatsApp",
+      "enlace": "https://movebarbellclub.aimharder.com/schedule",
+      "enlace_texto": "Reserva tu plaza",
       "encuadre": "Centro"
     },
     {
@@ -172,16 +172,16 @@
       "enlace_texto": ""
     },
     {
-      "titulo": "The Gymnastic Course",
+      "titulo": "CrossFit Level 2",
       "tipo": "Formación",
       "fecha": "2025-01-01",
-      "fecha_texto": "Gimnasia",
+      "fecha_texto": "Certificación CrossFit",
       "hora": "",
-      "descripcion": "Curso de especialización en gimnasia.",
+      "descripcion": "Curso CrossFit Level 2 Trainer.",
       "para": "",
       "precio": "",
       "plazas": "",
-      "imagen": "img/form-gymnastic.webp",
+      "imagen": "img/form-cf-l2.webp",
       "encuadre": "Centro",
       "enlace": "",
       "enlace_texto": ""
@@ -259,6 +259,21 @@
       "imagen": "img/ig-formaciones.webp",
       "enlace": "https://www.instagram.com/movebc.crossfit/p/DXo8f0cDPve/",
       "enlace_texto": "Ver en Instagram"
+    },
+    {
+      "titulo": "The Gymnastic Course",
+      "tipo": "Formación",
+      "fecha": "2025-01-01",
+      "fecha_texto": "Gimnasia",
+      "hora": "",
+      "descripcion": "Curso de especialización en gimnasia.",
+      "para": "",
+      "precio": "",
+      "plazas": "",
+      "imagen": "",
+      "encuadre": "Centro",
+      "enlace": "",
+      "enlace_texto": ""
     }
   ]
 }

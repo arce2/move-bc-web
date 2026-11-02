@@ -19,7 +19,7 @@
   var pos = function (e) { return { 'Arriba': 'center 12%', 'Centro': 'center 55%', 'Abajo': 'center 88%' }[e] || 'center top'; };
   var cap = function (s) { return s.charAt(0).toUpperCase() + s.slice(1); };
   var waBtn = function (a) {
-    if (!a.enlace) return '';
+    if (!a.enlace) a = { enlace: 'https://movebarbellclub.aimharder.com/schedule', enlace_texto: 'Reserva tu plaza' };
     var ext = /^https?:/.test(a.enlace) ? ' target="_blank" rel="noopener"' : '';
     return '<a class="btn" href="' + esc(a.enlace) + '"' + ext + '>' + esc(a.enlace_texto || 'Más información') + '</a>';
   };
